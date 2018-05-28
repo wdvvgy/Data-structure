@@ -13,7 +13,11 @@ public:
 		capacity = 5;
 		data = new T[capacity];
 	}
-
+	
+	~Queue<T>() {
+		delete[] data;
+	}
+	
 	void resize() {
 		T* newData = new T[capacity * 2];
 		for (int i = front; i <= back; i++) {
